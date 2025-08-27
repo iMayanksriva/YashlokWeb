@@ -1,340 +1,236 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, GraduationCap, BookOpen, Briefcase, Dumbbell, Youtube, Brain, Code2, LayoutTemplate, Sparkles, School, Award } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
 
-// ————————————————
-// Editable profile data (update here and the UI will reflect it)
-// ————————————————
-const profile = {
-  name: "Mayank Kumar Srivastava",
-  tagline: "Assistant Professor • ML Educator • Program Designer",
-  location: "India",
-  summary:
-    "Assistant Professor in the Department of Computer Science & IT (Faculty of Applied Computing). I design industry‑aligned curricula, lead multi‑semester skill programs, and mentor students in Machine Learning, Programming, Aptitude, and Vedic Mathematics.",
-  highlights: [
-    "Planning a 2025 roadmap to become a Machine Learning Engineer from basics",
-    "Organizing a multi‑semester Skill Development Training Program (EST & Entrepreneurship)",
-    "Research topic: Comparative Analysis of Multi‑View and Neural 3D Reconstruction Methods",
-    "Experienced at demystifying exponents/logarithms using CS analogies (binary search, complexity)",
-  ],
-  interests: ["Machine Learning", "Teaching & Curriculum", "Aptitude Training", "Vedic Maths", "Video Creation"],
-  skills: [
-    "Python",
-    "Machine Learning",
-    "Data Preprocessing",
-    "DSA (Python)",
-    "Vedic Mathematics",
-    "Public Speaking & Mentoring",
-    "Curriculum Design",
-    "Aptitude Training",
-  ],
-  roles: [
-    {
-      title: "Assistant Professor",
-      org: "Dept. of CS & IT, Faculty of Applied Computing",
-      period: "— Present",
-      bullets: [
-        "Teach programming, DSA, ML fundamentals, and exam preparation.",
-        "Own placement‑focused training, mock interviews, and assessments.",
-        "Build engaging lessons that connect math to CS (logs, complexity, etc.).",
-      ],
-    },
-    {
-      title: "Program Lead — Skill Development",
-      org: "Employability Skills Training & Entrepreneurship Track",
-      period: "2025",
-      bullets: [
-        "EST: Vedic Maths, Aptitude, Programming, DSA across 3 semesters.",
-        "Entrepreneurship: MVP, market research, financial planning, pitching.",
-        "Scheduling 100‑hour Phase‑2 placement training (Mon–Sat).",
-      ],
-    },
-  ],
-  projects: [
-    {
-      title: "End‑to‑End ML Project (Kaggle Data)",
-      year: "2025",
-      description:
-        "Hands‑on project walking learners from problem framing to deployment: data sourcing, preprocessing, modeling, evaluation, and presentation.",
-      tags: ["Python", "scikit‑learn", "EDA"],
-    },
-    {
-      title: "Cinematic Field & Waterfalls Film",
-      year: "2025",
-      description:
-        "Edited a cinematic YouTube short from 10 videos + 28 photos: green fields, 3 waterfalls, forests, tea gardens, dams, pet shots, and travel route overlay.",
-      tags: ["Storyboarding", "Color grading"],
-      icon: Youtube,
-    },
-    {
-      title: "Demystifying Logarithms for Beginners",
-      year: "2025",
-      description:
-        "A 3‑hour lesson plan linking logs ↔ exponents, with binary search/time‑complexity analogies and fear‑reducing practice problems.",
-      tags: ["Teaching", "Math", "CS Analogies"],
-    },
-  ],
-  research: {
-    title: "Comparative Analysis of Multi‑View and Neural 3D Reconstruction Methods",
-    area: "Computer Vision / 3D",
-    notes:
-      "Surveying multi‑view geometry vs. neural radiance fields (NeRFs): data regimes, reconstruction fidelity, compute trade‑offs, and evaluation metrics.",
-  },
-  fitness: {
-    note:
-      "Former volleyball player getting back to training; follows a structured diet and a 4–5 day/week gym plan.",
-  },
-  contact: {
-    email: "",
-    github: "#",
-    linkedin: "#",
-  },
-};
 
-// Small helper components
-const Section = ({ id, title, icon: Icon, children }) => (
-  <section id={id} className="scroll-mt-24">
-    <Card className="border-0 shadow-sm bg-white/70 dark:bg-zinc-900/60 backdrop-blur-xl">
-      <CardHeader className="pb-2">
-        <div className="flex items-center gap-3">
-          {Icon ? <Icon className="w-5 h-5" aria-hidden /> : null}
-          <CardTitle className="text-xl font-semibold">{title}</CardTitle>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mayank Kumar Srivastava — Portfolio</title>
+  <!-- Tailwind CDN for zero-build styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="robots" content="noindex" />
+  <style>
+    /* Small safe defaults in case Tailwind CDN is blocked */
+    .fallback-hidden { display: none; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-zinc-50 to-white text-zinc-900 min-h-screen">
+  <div class="max-w-5xl mx-auto px-4 py-6">
+    <!-- Top controls / helpful fix info -->
+    <div class="flex items-start justify-between gap-4 mb-6">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="text-2xl">✨</div>
+          <div>
+            <div class="text-sm text-zinc-500">Portfolio — Mayank Kumar Srivastava</div>
+            <div class="text-lg font-semibold">Static index.html (ready for GitHub Pages)</div>
+          </div>
         </div>
-      </CardHeader>
-      <CardContent className="pt-0">{children}</CardContent>
-    </Card>
-  </section>
-);
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900 text-zinc-900 dark:text-zinc-100">
-      {/* NAVBAR */}
-      <header className="sticky top-0 z-50 border-b border-zinc-200/60 dark:border-zinc-800/60 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl">
-        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5" />
-            <span className="font-semibold">Mayank • Portfolio</span>
-          </div>
-          <nav className="hidden md:flex gap-4 text-sm">
-            <a href="#about" className="hover:underline">About</a>
-            <a href="#experience" className="hover:underline">Experience</a>
-            <a href="#projects" className="hover:underline">Projects</a>
-            <a href="#research" className="hover:underline">Research</a>
-            <a href="#programs" className="hover:underline">Programs</a>
-            <a href="#skills" className="hover:underline">Skills</a>
-            <a href="#contact" className="hover:underline">Contact</a>
-          </nav>
+        <div class="rounded-lg border p-3 bg-white shadow-sm text-sm">
+          <strong>If you saw:</strong>
+          <code class="ml-1">SyntaxError: /index.tsx: Unexpected token (1:0)</code>
+          <div class="mt-2">That's because the runtime tried to parse HTML as <code>.tsx</code>. To fix, save this file as <code>index.html</code> and deploy as a static site (GitHub Pages, Netlify, Vercel static folder, etc.).</div>
         </div>
-      </header>
+      </div>
 
-      {/* HERO */}
-      <main className="mx-auto max-w-6xl px-4 py-10 md:py-16 space-y-8">
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-[1.2fr_.8fr] gap-6 items-center"
-        >
-          <div className="space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-              {profile.name}
-            </h1>
-            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-300">
-              {profile.tagline}
-            </p>
-            <p className="max-w-2xl text-zinc-700 dark:text-zinc-300">
-              {profile.summary}
-            </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {profile.highlights.map((h, i) => (
-                <span key={i} className="text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700">
-                  {h}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-3 pt-2">
-              <Button asChild className="rounded-2xl">
-                <a href="#contact"><Mail className="w-4 h-4 mr-2"/>Get in touch</a>
-              </Button>
-              <Button variant="secondary" asChild className="rounded-2xl">
-                <a href="#projects"><LayoutTemplate className="w-4 h-4 mr-2"/>View Projects</a>
-              </Button>
-            </div>
-          </div>
-          <div className="grid gap-3">
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 text-sm">
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300"><School className="w-4 h-4"/> Teaching Focus</div>
-                <ul className="list-disc pl-5 mt-2 space-y-1 text-zinc-700 dark:text-zinc-300">
-                  <li>Programming • DSA (Python) • ML Fundamentals</li>
-                  <li>Vedic Maths • Aptitude • Interview Prep</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 text-sm">
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300"><Dumbbell className="w-4 h-4"/> Personal</div>
-                <p className="mt-2 text-zinc-700 dark:text-zinc-300">{profile.fitness.note}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </motion.section>
-
-        {/* ABOUT */}
-        <Section id="about" title="About" icon={BookOpen}>
-          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-            I enjoy simplifying complex topics with real‑world analogies and curiosity‑driven activities. My students often start out anxious about mathematics or algorithms; I help them build confidence by connecting concepts like logarithms to exponents and binary search, and by layering practice problems that progress from intuitive to formal.
-          </p>
-        </Section>
-
-        {/* EXPERIENCE */}
-        <Section id="experience" title="Experience" icon={Briefcase}>
-          <div className="grid md:grid-cols-2 gap-4">
-            {profile.roles.map((r, i) => (
-              <Card key={i} className="border-0 shadow-sm">
-                <CardHeader className="pb-1">
-                  <CardTitle className="text-base">{r.title}</CardTitle>
-                  <div className="text-sm text-zinc-500">{r.org}</div>
-                </CardHeader>
-                <CardContent className="pt-0 text-sm">
-                  <div className="text-xs text-zinc-500 mb-2">{r.period}</div>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {r.bullets.map((b, j) => (
-                      <li key={j}>{b}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </Section>
-
-        {/* PROJECTS */}
-        <Section id="projects" title="Selected Projects" icon={Code2}>
-          <div className="grid md:grid-cols-3 gap-4">
-            {profile.projects.map((p, i) => {
-              const Icon = p.icon || Code2;
-              return (
-                <Card key={i} className="border-0 shadow-sm">
-                  <CardHeader className="pb-1">
-                    <div className="flex items-center gap-2">
-                      <Icon className="w-4 h-4"/>
-                      <CardTitle className="text-base">{p.title}</CardTitle>
-                    </div>
-                    <div className="text-xs text-zinc-500">{p.year}</div>
-                  </CardHeader>
-                  <CardContent className="pt-0 text-sm">
-                    <p className="mb-2">{p.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {p.tags?.map((t, k) => (
-                        <span key={k} className="text-xs px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700">{t}</span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </Section>
-
-        {/* RESEARCH */}
-        <Section id="research" title="Research" icon={Brain}>
-          <div className="grid md:grid-cols-[1.2fr_.8fr] gap-4 items-start">
-            <div>
-              <h3 className="font-medium">{profile.research.title}</h3>
-              <div className="text-sm text-zinc-500 mb-2">{profile.research.area}</div>
-              <p className="text-sm">{profile.research.notes}</p>
-            </div>
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 text-sm">
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300"><Award className="w-4 h-4"/> Focus Areas</div>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Reconstruction quality vs. compute trade‑offs</li>
-                  <li>Data efficiency and generalization</li>
-                  <li>Evaluation metrics and benchmarks</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </Section>
-
-        {/* PROGRAMS */}
-        <Section id="programs" title="Skill Development Programs" icon={GraduationCap}>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border-0 shadow-sm">
-              <CardHeader className="pb-1">
-                <CardTitle className="text-base">Employability Skills Training (EST)</CardTitle>
-                <div className="text-xs text-zinc-500">3 Semesters</div>
-              </CardHeader>
-              <CardContent className="pt-0 text-sm">
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Vedic Mathematics</li>
-                  <li>Aptitude & Reasoning</li>
-                  <li>Programming & DSA</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-sm">
-              <CardHeader className="pb-1">
-                <CardTitle className="text-base">Entrepreneurship Track</CardTitle>
-                <div className="text-xs text-zinc-500">Startup Foundations</div>
-              </CardHeader>
-              <CardContent className="pt-0 text-sm">
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>MVP & Market Research</li>
-                  <li>Financial Planning</li>
-                  <li>Pitching & Demos</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </Section>
-
-        {/* SKILLS */}
-        <Section id="skills" title="Skills & Interests" icon={Sparkles}>
-          <div className="flex flex-wrap gap-2">
-            {profile.skills.map((s, i) => (
-              <span key={i} className="text-sm px-3 py-1 rounded-2xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700">{s}</span>
-            ))}
-          </div>
-          <div className="mt-3 text-sm text-zinc-500">Also interested in: {profile.interests.join(", ")}</div>
-        </Section>
-
-        {/* CONTACT */}
-        <Section id="contact" title="Contact" icon={Mail}>
-          <div className="grid md:grid-cols-2 gap-4 items-center">
-            <div className="space-y-2 text-sm">
-              <p>Based in {profile.location}. Open to collaborations, guest lectures, and program design.</p>
-              <div className="flex gap-3 pt-1">
-                {profile.contact.email ? (
-                  <Button asChild className="rounded-2xl"><a href={`mailto:${profile.contact.email}`}><Mail className="w-4 h-4 mr-2"/>Email</a></Button>
-                ) : (
-                  <Button disabled className="rounded-2xl"><Mail className="w-4 h-4 mr-2"/>Add Email</Button>
-                )}
-                <Button variant="secondary" asChild className="rounded-2xl"><a href={profile.contact.linkedin}><Linkedin className="w-4 h-4 mr-2"/>LinkedIn</a></Button>
-                <Button variant="secondary" asChild className="rounded-2xl"><a href={profile.contact.github}><Github className="w-4 h-4 mr-2"/>GitHub</a></Button>
-              </div>
-            </div>
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 text-sm">
-                <div className="font-medium mb-1">Quick Note</div>
-                <p>
-                  Looking for: collaborations on ML education, student bootcamps, and curriculum refreshes aligned with placements.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </Section>
-
-        {/* FOOTER */}
-        <footer className="pt-8 pb-12 text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} {profile.name}. Built with React & Tailwind.
-        </footer>
-      </main>
+      <div class="flex-shrink-0 flex flex-col gap-2">
+        <button id="downloadBtn" class="px-4 py-2 bg-zinc-900 text-white rounded-lg text-sm">Download index.html</button>
+        <button id="showDeploy" class="px-4 py-2 border rounded-lg text-sm">How to deploy</button>
+      </div>
     </div>
-  );
-}
 
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-6 items-start mb-6">
+      <div class="space-y-4">
+        <h1 class="text-3xl md:text-5xl font-bold">Mayank Kumar Srivastava</h1>
+        <p class="text-lg md:text-xl text-zinc-600">Assistant Professor • ML Educator • Program Designer</p>
+        <p class="text-zinc-700 max-w-2xl">Assistant Professor in the Department of Computer Science &amp; IT (Faculty of Applied Computing). I design industry-aligned curricula, lead multi-semester skill programs, and mentor students in Machine Learning, Programming, Aptitude, and Vedic Mathematics.</p>
+
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">2025 roadmap: ML Engineer from basics</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Multi-semester Skill Dev Program</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Research: Multi-View vs Neural 3D Recon</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Demystifying logs via CS analogies</span>
+        </div>
+
+        <div class="flex gap-3 pt-2">
+          <a href="#contact" class="px-4 py-2 bg-zinc-900 text-white rounded-2xl text-sm">✉️ Get in touch</a>
+          <a href="#projects" class="px-4 py-2 bg-zinc-100 border rounded-2xl text-sm">📁 View Projects</a>
+        </div>
+      </div>
+
+      <aside class="grid gap-3">
+        <div class="p-4 bg-white border rounded-xl shadow-sm text-sm">
+          <div class="font-medium mb-2">Teaching Focus</div>
+          <ul class="list-disc pl-5 mt-1">
+            <li>Programming • DSA (Python) • ML Fundamentals</li>
+            <li>Vedic Maths • Aptitude • Interview Prep</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-white border rounded-xl shadow-sm text-sm">
+          <div class="font-medium mb-2">Personal</div>
+          <p class="text-sm">Former volleyball player getting back to training; follows a structured diet and a 4–5 day/week gym plan.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-2">About</h2>
+      <p>I enjoy simplifying complex topics with real-world analogies and curiosity-driven activities. My students often start out anxious about mathematics or algorithms; I help them build confidence by connecting concepts like logarithms to exponents and binary search, and by layering practice problems that progress from intuitive to formal.</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Experience</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Assistant Professor</h3>
+          <p class="text-zinc-500">Dept. of CS &amp; IT, Faculty of Applied Computing</p>
+          <ul class="list-disc pl-5 mt-2">
+            <li>Teach programming, DSA, ML fundamentals, and exam prep.</li>
+            <li>Placement-focused training, mock interviews, assessments.</li>
+            <li>Link math &amp; CS with engaging lessons (logs, complexity, etc.).</li>
+          </ul>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Program Lead — Skill Development</h3>
+          <p class="text-zinc-500">Employability Skills Training &amp; Entrepreneurship Track</p>
+          <ul class="list-disc pl-5 mt-2">
+            <li>EST: Vedic Maths, Aptitude, Programming, DSA</li>
+            <li>Entrepreneurship: MVP, market research, financial planning</li>
+            <li>100-hour Phase-2 placement training (Mon–Sat)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Selected Projects</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">End-to-End ML Project</h3>
+          <p class="text-zinc-500 text-xs mb-2">2025</p>
+          <p>Hands-on project: from problem framing to deployment with Kaggle data.</p>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Cinematic Film</h3>
+          <p class="text-zinc-500 text-xs mb-2">2025</p>
+          <p>Edited a cinematic YouTube short with 10 videos + 28 photos (fields, waterfalls, forests, dams, pets, route overlay).</p>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Demystifying Logarithms</h3>
+          <p class="text-zinc-500 text-xs mb-2">2025</p>
+          <p>3-hour lesson plan linking logs ↔ exponents with binary search/time-complexity analogies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-2">Research</h2>
+      <h3 class="font-medium">Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods</h3>
+      <p class="text-sm text-zinc-500 mb-2">Computer Vision / 3D</p>
+      <p class="text-sm">Surveying multi-view geometry vs. neural radiance fields (NeRFs): data regimes, reconstruction fidelity, compute trade-offs, and evaluation metrics.</p>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Skill Development Programs</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Employability Skills Training (EST)</h3>
+          <ul class="list-disc pl-5 mt-2">
+            <li>Vedic Mathematics</li>
+            <li>Aptitude &amp; Reasoning</li>
+            <li>Programming &amp; DSA</li>
+          </ul>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <h3 class="font-medium">Entrepreneurship Track</h3>
+          <ul class="list-disc pl-5 mt-2">
+            <li>MVP &amp; Market Research</li>
+            <li>Financial Planning</li>
+            <li>Pitching &amp; Demos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-2">Skills &amp; Interests</h2>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Python</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Machine Learning</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Data Preprocessing</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">DSA (Python)</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Vedic Mathematics</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Public Speaking</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Curriculum Design</span>
+        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Aptitude Training</span>
+      </div>
+      <p class="text-sm text-zinc-500 mt-3">Also interested in: ML, Teaching &amp; Curriculum, Aptitude Training, Vedic Maths, Video Creation</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-white border rounded-xl shadow p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-2">Contact</h2>
+      <p class="text-sm">Based in India. Open to collaborations, guest lectures, and program design.</p>
+      <div class="flex gap-3 pt-2 text-sm">
+        <a href="mailto:you@example.com" id="emailLink" class="px-4 py-2 bg-zinc-900 text-white rounded-2xl">✉️ Email</a>
+        <a href="#" id="linkedinLink" class="px-4 py-2 bg-zinc-100 border rounded-2xl">🔗 LinkedIn</a>
+        <a href="#" id="githubLink" class="px-4 py-2 bg-zinc-100 border rounded-2xl">🐙 GitHub</a>
+      </div>
+    </section>
+
+    <footer class="pt-8 pb-12 text-center text-xs text-zinc-500">
+      © <span id="year"></span> Mayank Kumar Srivastava. Built with static HTML + Tailwind.
+    </footer>
+  </div>
+
+  <script>
+    // Small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Download the current document as index.html (helps avoid the .tsx naming mistake)
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      // Recreate a minimal, clean HTML file to download (avoid bundler-only artifacts)
+      const doctype = '<!DOCTYPE html>\n';
+      // Build a copy of the visible <html> content but strip the download button behavior to keep the file clean
+      const htmlCopy = document.documentElement.outerHTML
+        .replace(/id="downloadBtn"[\s\S]*?</button>/, '')
+        .replace(/id="showDeploy"[\s\S]*?</button>/, '');
+      const blob = new Blob([doctype + htmlCopy], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'index.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // Quick deploy instructions popup
+    document.getElementById('showDeploy').addEventListener('click', function () {
+      const msg = [
+        'Deploy to GitHub Pages (quick):',
+        '1) Create a new repo on GitHub (e.g., my-portfolio).',
+        '2) Add this index.html to the root of the repository and commit.',
+        "3) Go to Settings → Pages, choose branch 'main' and folder '/' (root), then Save.",
+        '4) Wait a few minutes — your site will be at: https://<your-username>.github.io/<repo-name>/'
+      ].join('\n');
+      alert(msg);
+    });
+
+    // Helpful: pre-fill contact links (you can edit them directly in the file)
+    // Replace these with your real contact links before publishing.
+    document.getElementById('emailLink').href = 'mailto:mayank@example.com';
+    document.getElementById('linkedinLink').href = '#';
+    document.getElementById('githubLink').href = '#';
+  </script>
+</body>
+</html>
