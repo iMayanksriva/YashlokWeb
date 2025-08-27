@@ -1,236 +1,83 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mayank Kumar Srivastava — Portfolio</title>
-  <!-- Tailwind CDN for zero-build styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="robots" content="noindex" />
-  <style>
-    /* Small safe defaults in case Tailwind CDN is blocked */
-    .fallback-hidden { display: none; }
-  </style>
-</head>
-<body class="bg-gradient-to-b from-zinc-50 to-white text-zinc-900 min-h-screen">
-  <div class="max-w-5xl mx-auto px-4 py-6">
-    <!-- Top controls / helpful fix info -->
-    <div class="flex items-start justify-between gap-4 mb-6">
-      <div class="flex-1">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="text-2xl">✨</div>
-          <div>
-            <div class="text-sm text-zinc-500">Portfolio — Mayank Kumar Srivastava</div>
-            <div class="text-lg font-semibold">Static index.html (ready for GitHub Pages)</div>
-          </div>
-        </div>
-
-        <div class="rounded-lg border p-3 bg-white shadow-sm text-sm">
-          <strong>If you saw:</strong>
-          <code class="ml-1">SyntaxError: /index.tsx: Unexpected token (1:0)</code>
-          <div class="mt-2">That's because the runtime tried to parse HTML as <code>.tsx</code>. To fix, save this file as <code>index.html</code> and deploy as a static site (GitHub Pages, Netlify, Vercel static folder, etc.).</div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayank Kumar Srivastava | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow p-6 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Mayank Kumar Srivastava</h1>
+        <nav class="space-x-6">
+          <a href="#about" class="hover:text-blue-600">About</a>
+          <a href="#experience" class="hover:text-blue-600">Experience</a>
+          <a href="#projects" class="hover:text-blue-600">Projects</a>
+          <a href="#research" class="hover:text-blue-600">Research</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="flex-shrink-0 flex flex-col gap-2">
-        <button id="downloadBtn" class="px-4 py-2 bg-zinc-900 text-white rounded-lg text-sm">Download index.html</button>
-        <button id="showDeploy" class="px-4 py-2 border rounded-lg text-sm">How to deploy</button>
-      </div>
-    </div>
-
-    <!-- HERO -->
-    <section class="grid md:grid-cols-2 gap-6 items-start mb-6">
-      <div class="space-y-4">
-        <h1 class="text-3xl md:text-5xl font-bold">Mayank Kumar Srivastava</h1>
-        <p class="text-lg md:text-xl text-zinc-600">Assistant Professor • ML Educator • Program Designer</p>
-        <p class="text-zinc-700 max-w-2xl">Assistant Professor in the Department of Computer Science &amp; IT (Faculty of Applied Computing). I design industry-aligned curricula, lead multi-semester skill programs, and mentor students in Machine Learning, Programming, Aptitude, and Vedic Mathematics.</p>
-
-        <div class="flex flex-wrap gap-2 pt-2">
-          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">2025 roadmap: ML Engineer from basics</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Multi-semester Skill Dev Program</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Research: Multi-View vs Neural 3D Recon</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 border">Demystifying logs via CS analogies</span>
-        </div>
-
-        <div class="flex gap-3 pt-2">
-          <a href="#contact" class="px-4 py-2 bg-zinc-900 text-white rounded-2xl text-sm">✉️ Get in touch</a>
-          <a href="#projects" class="px-4 py-2 bg-zinc-100 border rounded-2xl text-sm">📁 View Projects</a>
-        </div>
-      </div>
-
-      <aside class="grid gap-3">
-        <div class="p-4 bg-white border rounded-xl shadow-sm text-sm">
-          <div class="font-medium mb-2">Teaching Focus</div>
-          <ul class="list-disc pl-5 mt-1">
-            <li>Programming • DSA (Python) • ML Fundamentals</li>
-            <li>Vedic Maths • Aptitude • Interview Prep</li>
-          </ul>
-        </div>
-        <div class="p-4 bg-white border rounded-xl shadow-sm text-sm">
-          <div class="font-medium mb-2">Personal</div>
-          <p class="text-sm">Former volleyball player getting back to training; follows a structured diet and a 4–5 day/week gym plan.</p>
-        </div>
-      </aside>
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto p-6">
+      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        I am an Assistant Professor in the Department of Computer Science and IT under the Faculty of Applied Computing. Passionate about teaching, research, and building skills for students, I also focus on fitness and continuous personal growth.
+      </p>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-2">About</h2>
-      <p>I enjoy simplifying complex topics with real-world analogies and curiosity-driven activities. My students often start out anxious about mathematics or algorithms; I help them build confidence by connecting concepts like logarithms to exponents and binary search, and by layering practice problems that progress from intuitive to formal.</p>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-4">Experience</h2>
-      <div class="grid md:grid-cols-2 gap-4 text-sm">
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Assistant Professor</h3>
-          <p class="text-zinc-500">Dept. of CS &amp; IT, Faculty of Applied Computing</p>
-          <ul class="list-disc pl-5 mt-2">
-            <li>Teach programming, DSA, ML fundamentals, and exam prep.</li>
-            <li>Placement-focused training, mock interviews, assessments.</li>
-            <li>Link math &amp; CS with engaging lessons (logs, complexity, etc.).</li>
-          </ul>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Program Lead — Skill Development</h3>
-          <p class="text-zinc-500">Employability Skills Training &amp; Entrepreneurship Track</p>
-          <ul class="list-disc pl-5 mt-2">
-            <li>EST: Vedic Maths, Aptitude, Programming, DSA</li>
-            <li>Entrepreneurship: MVP, market research, financial planning</li>
-            <li>100-hour Phase-2 placement training (Mon–Sat)</li>
-          </ul>
-        </div>
+    <!-- Experience Section -->
+    <section id="experience" class="bg-gray-100 p-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-4">Experience</h2>
+        <ul class="space-y-3">
+          <li>Assistant Professor – Computer Science & IT</li>
+          <li>Mentor – Employability Skills Training & Entrepreneurship Programs</li>
+          <li>Organized multi-semester Skill Development Training Program covering Vedic Maths, Aptitude, Programming, DSA, and Entrepreneurship.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-4">Selected Projects</h2>
-      <div class="grid md:grid-cols-3 gap-4 text-sm">
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">End-to-End ML Project</h3>
-          <p class="text-zinc-500 text-xs mb-2">2025</p>
-          <p>Hands-on project: from problem framing to deployment with Kaggle data.</p>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Cinematic Film</h3>
-          <p class="text-zinc-500 text-xs mb-2">2025</p>
-          <p>Edited a cinematic YouTube short with 10 videos + 28 photos (fields, waterfalls, forests, dams, pets, route overlay).</p>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Demystifying Logarithms</h3>
-          <p class="text-zinc-500 text-xs mb-2">2025</p>
-          <p>3-hour lesson plan linking logs ↔ exponents with binary search/time-complexity analogies.</p>
-        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-5xl mx-auto p-6">
+      <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>End-to-End Machine Learning Project with Kaggle Data</li>
+        <li>Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods (Research)</li>
+        <li>Lesson design for teaching Exponents, Powers, and Logarithms with real-world and algorithmic analogies</li>
+      </ul>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="bg-gray-100 p-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-4">Research</h2>
+        <p class="leading-relaxed">
+          Current research topic: <strong>Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods</strong>. Focused on exploring efficient 3D modeling techniques using modern machine learning methods.
+        </p>
       </div>
     </section>
 
-    <!-- RESEARCH -->
-    <section id="research" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-2">Research</h2>
-      <h3 class="font-medium">Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods</h3>
-      <p class="text-sm text-zinc-500 mb-2">Computer Vision / 3D</p>
-      <p class="text-sm">Surveying multi-view geometry vs. neural radiance fields (NeRFs): data regimes, reconstruction fidelity, compute trade-offs, and evaluation metrics.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto p-6">
+      <h2 class="text-3xl font-semibold mb-4">Contact</h2>
+      <p>Email: <a href="mailto:youremail@example.com" class="text-blue-600">youremail@example.com</a></p>
+      <p>LinkedIn: <a href="#" class="text-blue-600">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="#" class="text-blue-600">github.com/yourusername</a></p>
     </section>
 
-    <!-- PROGRAMS -->
-    <section id="programs" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-4">Skill Development Programs</h2>
-      <div class="grid md:grid-cols-2 gap-4 text-sm">
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Employability Skills Training (EST)</h3>
-          <ul class="list-disc pl-5 mt-2">
-            <li>Vedic Mathematics</li>
-            <li>Aptitude &amp; Reasoning</li>
-            <li>Programming &amp; DSA</li>
-          </ul>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <h3 class="font-medium">Entrepreneurship Track</h3>
-          <ul class="list-disc pl-5 mt-2">
-            <li>MVP &amp; Market Research</li>
-            <li>Financial Planning</li>
-            <li>Pitching &amp; Demos</li>
-          </ul>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-white shadow p-6 mt-6">
+      <div class="max-w-5xl mx-auto text-center text-gray-600">
+        © <span id="year"></span> Mayank Kumar Srivastava. All rights reserved.
       </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-2">Skills &amp; Interests</h2>
-      <div class="flex flex-wrap gap-2 text-sm">
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Python</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Machine Learning</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Data Preprocessing</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">DSA (Python)</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Vedic Mathematics</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Public Speaking</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Curriculum Design</span>
-        <span class="px-3 py-1 bg-zinc-100 border rounded-2xl">Aptitude Training</span>
-      </div>
-      <p class="text-sm text-zinc-500 mt-3">Also interested in: ML, Teaching &amp; Curriculum, Aptitude Training, Vedic Maths, Video Creation</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="bg-white border rounded-xl shadow p-6 mb-6">
-      <h2 class="text-xl font-semibold mb-2">Contact</h2>
-      <p class="text-sm">Based in India. Open to collaborations, guest lectures, and program design.</p>
-      <div class="flex gap-3 pt-2 text-sm">
-        <a href="mailto:you@example.com" id="emailLink" class="px-4 py-2 bg-zinc-900 text-white rounded-2xl">✉️ Email</a>
-        <a href="#" id="linkedinLink" class="px-4 py-2 bg-zinc-100 border rounded-2xl">🔗 LinkedIn</a>
-        <a href="#" id="githubLink" class="px-4 py-2 bg-zinc-100 border rounded-2xl">🐙 GitHub</a>
-      </div>
-    </section>
-
-    <footer class="pt-8 pb-12 text-center text-xs text-zinc-500">
-      © <span id="year"></span> Mayank Kumar Srivastava. Built with static HTML + Tailwind.
     </footer>
-  </div>
 
-  <script>
-    // Small helpers
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Download the current document as index.html (helps avoid the .tsx naming mistake)
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-      // Recreate a minimal, clean HTML file to download (avoid bundler-only artifacts)
-      const doctype = '<!DOCTYPE html>\n';
-      // Build a copy of the visible <html> content but strip the download button behavior to keep the file clean
-      const htmlCopy = document.documentElement.outerHTML
-        .replace(/id="downloadBtn"[\s\S]*?</button>/, '')
-        .replace(/id="showDeploy"[\s\S]*?</button>/, '');
-      const blob = new Blob([doctype + htmlCopy], { type: 'text/html;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'index.html';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    });
-
-    // Quick deploy instructions popup
-    document.getElementById('showDeploy').addEventListener('click', function () {
-      const msg = [
-        'Deploy to GitHub Pages (quick):',
-        '1) Create a new repo on GitHub (e.g., my-portfolio).',
-        '2) Add this index.html to the root of the repository and commit.',
-        "3) Go to Settings → Pages, choose branch 'main' and folder '/' (root), then Save.",
-        '4) Wait a few minutes — your site will be at: https://<your-username>.github.io/<repo-name>/'
-      ].join('\n');
-      alert(msg);
-    });
-
-    // Helpful: pre-fill contact links (you can edit them directly in the file)
-    // Replace these with your real contact links before publishing.
-    document.getElementById('emailLink').href = 'mailto:mayank@example.com';
-    document.getElementById('linkedinLink').href = '#';
-    document.getElementById('githubLink').href = '#';
-  </script>
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
