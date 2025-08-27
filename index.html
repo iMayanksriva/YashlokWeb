@@ -1,83 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mayank Kumar Srivastava | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-50 text-gray-900 font-sans">
-    <!-- Header -->
-    <header class="bg-white shadow p-6 sticky top-0 z-50">
-      <div class="max-w-5xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Mayank Kumar Srivastava</h1>
-        <nav class="space-x-6">
-          <a href="#about" class="hover:text-blue-600">About</a>
-          <a href="#experience" class="hover:text-blue-600">Experience</a>
-          <a href="#projects" class="hover:text-blue-600">Projects</a>
-          <a href="#research" class="hover:text-blue-600">Research</a>
-          <a href="#contact" class="hover:text-blue-600">Contact</a>
-        </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayank Kumar Srivastava - Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-style: italic;
+    }
+    nav {
+      background: #444;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+    }
+    nav a:hover {
+      background: #666;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #222;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .projects, .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #0077cc;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mayank Kumar Srivastava</h1>
+    <p>Assistant Professor | Computer Science & IT | Applied Computing</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#interests">Interests</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Hello! I’m <strong>Mayank Kumar Srivastava</strong>, an Assistant Professor in Computer Science & IT, Faculty of Applied Computing.  
+      I have experience in teaching Programming, Data Structures, Algorithms, Aptitude, Vedic Maths, and mentoring students for employability skills and entrepreneurship.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><strong>Programming:</strong> Python, C++, Java, HTML/CSS/JS</div>
+      <div class="card"><strong>Machine Learning:</strong> Supervised, Semi-Supervised, Neural 3D Reconstruction</div>
+      <div class="card"><strong>Teaching:</strong> Vedic Maths, Aptitude, Algorithms, Exponents & Logarithms</div>
+      <div class="card"><strong>Entrepreneurship:</strong> Startup Fundamentals, MVP, Market Research</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects & Research</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Research</h3>
+        <p><em>Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods</em></p>
       </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="max-w-5xl mx-auto p-6">
-      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-      <p class="text-lg leading-relaxed">
-        I am an Assistant Professor in the Department of Computer Science and IT under the Faculty of Applied Computing. Passionate about teaching, research, and building skills for students, I also focus on fitness and continuous personal growth.
-      </p>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="bg-gray-100 p-6">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-4">Experience</h2>
-        <ul class="space-y-3">
-          <li>Assistant Professor – Computer Science & IT</li>
-          <li>Mentor – Employability Skills Training & Entrepreneurship Programs</li>
-          <li>Organized multi-semester Skill Development Training Program covering Vedic Maths, Aptitude, Programming, DSA, and Entrepreneurship.</li>
-        </ul>
+      <div class="card">
+        <h3>Teaching Modules</h3>
+        <p>Developed engaging lessons for sets, exponents, logarithms, and problem-solving in Computer Science.</p>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="max-w-5xl mx-auto p-6">
-      <h2 class="text-3xl font-semibold mb-4">Projects</h2>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>End-to-End Machine Learning Project with Kaggle Data</li>
-        <li>Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods (Research)</li>
-        <li>Lesson design for teaching Exponents, Powers, and Logarithms with real-world and algorithmic analogies</li>
-      </ul>
-    </section>
-
-    <!-- Research Section -->
-    <section id="research" class="bg-gray-100 p-6">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-4">Research</h2>
-        <p class="leading-relaxed">
-          Current research topic: <strong>Comparative Analysis of Multi-View and Neural 3D Reconstruction Methods</strong>. Focused on exploring efficient 3D modeling techniques using modern machine learning methods.
-        </p>
+      <div class="card">
+        <h3>Skill Development Training</h3>
+        <p>Designed a multi-semester training program in Employability Skills and Entrepreneurship for students.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-5xl mx-auto p-6">
-      <h2 class="text-3xl font-semibold mb-4">Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com" class="text-blue-600">youremail@example.com</a></p>
-      <p>LinkedIn: <a href="#" class="text-blue-600">linkedin.com/in/yourprofile</a></p>
-      <p>GitHub: <a href="#" class="text-blue-600">github.com/yourusername</a></p>
-    </section>
+  <section id="interests">
+    <h2>Personal Interests</h2>
+    <div class="card">
+      <p>I’m passionate about fitness, maintaining a healthy lifestyle, and traveling. I also enjoy video editing, photography, and exploring nature through hiking and trekking.</p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-white shadow p-6 mt-6">
-      <div class="max-w-5xl mx-auto text-center text-gray-600">
-        © <span id="year"></span> Mayank Kumar Srivastava. All rights reserved.
-      </div>
-    </footer>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card" style="text-align:center;">
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/" target="_blank">github.com/your-profile</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/" target="_blank">linkedin.com/in/your-profile</a></p>
+    </div>
+  </section>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <footer>
+    <p>&copy; 2025 Mayank Kumar Srivastava. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
 </html>
+
